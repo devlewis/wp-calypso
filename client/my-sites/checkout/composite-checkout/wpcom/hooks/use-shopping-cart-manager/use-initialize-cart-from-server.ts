@@ -15,7 +15,8 @@ import {
 	addItemToResponseCart,
 	convertRawResponseCartToResponseCart,
 	addCouponToResponseCart,
-} from '../types';
+} from '../../types';
+import { CacheStatus, ShoppingCartAction, ReactStandardAction } from './types';
 
 const debug = debugFactory( 'calypso:composite-checkout:use-initialize-cart-from-server' );
 
@@ -26,7 +27,7 @@ export default function useInitializeCartFromServer(
 	couponToAdd: string | null,
 	getServerCart: () => Promise< ResponseCart >,
 	setServerCart: ( arg0: RequestCart ) => Promise< ResponseCart >,
-	hookDispatch: ( arg0: ShoppingCartHookAction ) => void,
+	hookDispatch: ( arg0: ShoppingCartAction ) => void,
 	onEvent?: ( arg0: ReactStandardAction ) => void
 ): void {
 	const isInitialized = useRef( false );

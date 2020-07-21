@@ -12,7 +12,8 @@ import {
 	ResponseCart,
 	RequestCart,
 	convertRawResponseCartToResponseCart,
-} from '../types';
+} from '../../types';
+import { CacheStatus, ShoppingCartAction, ReactStandardAction } from './types';
 
 const debug = debugFactory( 'calypso:composite-checkout:use-cart-update-and-revalidate' );
 
@@ -20,7 +21,7 @@ export default function useCartUpdateAndRevalidate(
 	cacheStatus: CacheStatus,
 	responseCart: ResponseCart,
 	setServerCart: ( arg0: RequestCart ) => Promise< ResponseCart >,
-	hookDispatch: ( arg0: ShoppingCartHookAction ) => void,
+	hookDispatch: ( arg0: ShoppingCartAction ) => void,
 	onEvent?: ( arg0: ReactStandardAction ) => void
 ): void {
 	useEffect( () => {
