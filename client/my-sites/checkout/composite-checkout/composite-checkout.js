@@ -90,7 +90,7 @@ import isDomainOnlySite from 'state/selectors/is-domain-only-site';
 import { retrieveSignupDestination, clearSignupDestinationCookie } from 'signup/utils';
 import { useWpcomProductVariants } from './wpcom/hooks/product-variants';
 import { CartProvider } from './cart-provider';
-import { translateResponseCartToWPCOMCart } from '../lib/translate-cart';
+import { translateResponseCartToWPCOMCart } from './wpcom/lib/translate-cart';
 import useShoppingCartManager from './wpcom/hooks/use-shopping-cart-manager';
 
 const debug = debugFactory( 'calypso:composite-checkout:composite-checkout' );
