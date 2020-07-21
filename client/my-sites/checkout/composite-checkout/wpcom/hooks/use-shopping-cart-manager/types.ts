@@ -32,6 +32,11 @@ export interface ShoppingCartManager {
 	updateLocation: ( arg0: CartLocation ) => void;
 	variantRequestStatus: VariantRequestStatus;
 	variantSelectOverride: VariantSelectOverride[];
+	changeItemVariant: (
+		uuidToReplace: string,
+		newProductSlug: string,
+		newProductId: number
+	) => void;
 	responseCart: ResponseCart;
 }
 

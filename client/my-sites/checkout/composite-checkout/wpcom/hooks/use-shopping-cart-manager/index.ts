@@ -119,13 +119,13 @@ export default function useShoppingCartManager( {
 		isPendingUpdate: cacheStatus !== 'valid',
 		addItem,
 		removeItem,
-		updateLocation,
-		changeItemVariant,
 		submitCoupon,
 		removeCoupon,
 		couponStatus,
+		updateLocation,
 		variantRequestStatus,
 		variantSelectOverride,
+		changeItemVariant,
 		responseCart,
 	} as ShoppingCartManager;
 }
