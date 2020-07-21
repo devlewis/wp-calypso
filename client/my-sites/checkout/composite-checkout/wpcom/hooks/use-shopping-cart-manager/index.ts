@@ -117,7 +117,6 @@ export default function useShoppingCartManager( {
 	return {
 		isLoading: cacheStatus === 'fresh',
 		isPendingUpdate: cacheStatus !== 'valid',
-		errors: responseCart.messages?.errors ?? [],
 		addItem,
 		removeItem,
 		updateLocation,
