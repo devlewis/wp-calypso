@@ -7,12 +7,13 @@ import { useEffect } from 'react';
  * Internal dependencies
  */
 import { ResponseCart } from '../../types';
+import { ShoppingCartAction } from './types';
 
 export default function useShowAddCouponSuccessMessage(
 	didAddCoupon: boolean,
 	responseCart: ResponseCart,
 	showAddCouponSuccessMessage: ( arg0: string ) => void,
-	hookDispatch: ( arg0: ShoppingCartHookAction ) => void
+	hookDispatch: ( arg0: ShoppingCartAction ) => void
 ): void {
 	useEffect( () => {
 		if ( didAddCoupon ) {
