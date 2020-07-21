@@ -11,7 +11,6 @@ import { useSelector, useDispatch, useStore } from 'react-redux';
 import {
 	WPCheckout,
 	useWpcomStore,
-	useShoppingCart,
 	FormFieldAnnotation,
 	areDomainsInLineItems,
 	emptyManagedContactDetails,
@@ -91,6 +90,8 @@ import isDomainOnlySite from 'state/selectors/is-domain-only-site';
 import { retrieveSignupDestination, clearSignupDestinationCookie } from 'signup/utils';
 import { useWpcomProductVariants } from './wpcom/hooks/product-variants';
 import { CartProvider } from './cart-provider';
+import { translateResponseCartToWPCOMCart } from '../lib/translate-cart';
+import useShoppingCartManager from './wpcom/hooks/use-shopping-cart-manager';
 
 const debug = debugFactory( 'calypso:composite-checkout:composite-checkout' );
 
@@ -187,35 +188,38 @@ export default function CompositeCheckout( {
 	const isFetchingProducts = useSelector( ( state ) => isProductsListFetching( state ) );
 
 	const {
+		removeItem,
+		submitCoupon,
+		removeCoupon,
+		updateLocation,
+		changeItemVariant,
+		isLoading: isLoadingCart,
+		isPendingUpdate: isCartPendingUpdate,
+		responseCart,
+		addItem,
+	} = useShoppingCartManager( {
+		cartKey: siteSlug,
+		canInitializeCart: canInitializeCart && ! isLoadingCartSynchronizer && ! isFetchingProducts,
+		productsToAdd: productsForCart,
+		couponToAdd: couponCodeFromUrl,
+		setCart: setCart || wpcomSetCart,
+		getCart: getCart || wpcomGetCart,
+		showAddCouponSuccessMessage,
+		onEvent: recordEvent,
+	} );
+
+	const {
 		items,
 		tax,
 		couponItem,
 		total,
 		credits,
-		removeItem,
-		submitCoupon,
-		removeCoupon,
-		updateLocation,
 		couponStatus,
-		changeItemVariant,
 		errors,
 		subtotal,
-		isLoading: isLoadingCart,
-		isPendingUpdate: isCartPendingUpdate,
 		allowedPaymentMethods: serverAllowedPaymentMethods,
 		variantSelectOverride,
-		responseCart,
-		addItem,
-	} = useShoppingCart(
-		siteSlug,
-		canInitializeCart && ! isLoadingCartSynchronizer && ! isFetchingProducts,
-		productsForCart,
-		couponCodeFromUrl,
-		setCart || wpcomSetCart,
-		getCart || wpcomGetCart,
-		showAddCouponSuccessMessage,
-		recordEvent
-	);
+	} = useMemo( () => translateResponseCartToWPCOMCart( responseCart ), [ responseCart ] );
 
 	const getThankYouUrl = useGetThankYouUrl( {
 		siteSlug,
