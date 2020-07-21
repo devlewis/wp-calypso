@@ -198,6 +198,7 @@ export default function CompositeCheckout( {
 		isPendingUpdate: isCartPendingUpdate,
 		responseCart,
 		addItem,
+		variantSelectOverride,
 	} = useShoppingCartManager( {
 		cartKey: siteSlug,
 		canInitializeCart: canInitializeCart && ! isLoadingCartSynchronizer && ! isFetchingProducts,
@@ -217,7 +218,6 @@ export default function CompositeCheckout( {
 		credits,
 		subtotal,
 		allowedPaymentMethods: serverAllowedPaymentMethods,
-		variantSelectOverride,
 	} = useMemo( () => translateResponseCartToWPCOMCart( responseCart ), [ responseCart ] );
 
 	const errors = responseCart.messages?.errors ?? [];
