@@ -45,7 +45,7 @@ $feature-upsell-break-at: '1040px';
 	text-align: center;
 
 	@include breakpoint-deprecated( '<1280px' ) {
-		font-size: 30px;
+		font-size: $font-title-large;
 	}
 
 	@include breakpoint-deprecated( '<660px' ) {
@@ -54,7 +54,7 @@ $feature-upsell-break-at: '1040px';
 }
 
 .feature-upsell__header-section {
-	font-size: 32px;
+	font-size: $font-title-large;
 	line-height: 1;
 	font-weight: 400;
 	margin-top: 40px;
@@ -62,7 +62,7 @@ $feature-upsell-break-at: '1040px';
 	text-align: center;
 
 	@include breakpoint-deprecated( '<1280px' ) {
-		font-size: 28px;
+		font-size: $font-title-large;
 	}
 
 	@include breakpoint-deprecated( '<660px' ) {
@@ -208,7 +208,7 @@ $feature-upsell-break-at: '1040px';
 		margin-bottom: 20px;
 
 		@include breakpoint-deprecated( '<1280px' ) {
-			font-size: 30px;
+			font-size: $font-title-large;
 		}
 
 		@include breakpoint-deprecated( '<660px' ) {
