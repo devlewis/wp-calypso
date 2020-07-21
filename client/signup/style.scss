@@ -461,6 +461,7 @@ body.is-section-signup.is-white-signup .signup.is-onboarding {
 	}
 
 	.formatted-header {
+		margin-top: 48px;
 		.formatted-header__title {
 			@include onboarding-font-recoleta;
 			color: $gray-100;
@@ -474,6 +475,7 @@ body.is-section-signup.is-white-signup .signup.is-onboarding {
 
 		.formatted-header__subtitle {
 			color: $gray-60;
+			margin-top: 2px;
 		}
 	}
 
