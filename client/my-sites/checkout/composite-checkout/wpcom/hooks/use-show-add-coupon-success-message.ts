@@ -12,7 +12,7 @@ export default function useShowAddCouponSuccessMessage(
 	useEffect( () => {
 		if ( didAddCoupon && couponCode !== lastCouponCode.current ) {
 			showAddCouponSuccessMessage( couponCode );
-			lastCouponCode.current = couponCode;
 		}
+		lastCouponCode.current = couponCode;
 	}, [ couponCode, didAddCoupon, showAddCouponSuccessMessage ] );
 }
