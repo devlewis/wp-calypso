@@ -189,6 +189,7 @@ export default function CompositeCheckout( {
 
 	const {
 		removeItem,
+		couponStatus,
 		submitCoupon,
 		removeCoupon,
 		updateLocation,
@@ -211,10 +212,9 @@ export default function CompositeCheckout( {
 	const {
 		items,
 		tax,
-		couponItem,
+		coupon: couponItem,
 		total,
 		credits,
-		couponStatus,
 		subtotal,
 		allowedPaymentMethods: serverAllowedPaymentMethods,
 		variantSelectOverride,
