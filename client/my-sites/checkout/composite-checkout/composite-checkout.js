@@ -215,11 +215,12 @@ export default function CompositeCheckout( {
 		total,
 		credits,
 		couponStatus,
-		errors,
 		subtotal,
 		allowedPaymentMethods: serverAllowedPaymentMethods,
 		variantSelectOverride,
 	} = useMemo( () => translateResponseCartToWPCOMCart( responseCart ), [ responseCart ] );
+
+	const errors = responseCart.messages?.errors ?? [];
 
 	const getThankYouUrl = useGetThankYouUrl( {
 		siteSlug,
