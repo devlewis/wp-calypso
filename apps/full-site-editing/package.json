@@ -101,7 +101,7 @@
 		"@automattic/plans-grid": "^1.0.0-alpha.0",
 		"@automattic/typography": "^1.0.0",
 		"@wordpress/api-fetch": "*",
-		"@wordpress/base-styles": "1.9.0",
+		"@wordpress/base-styles": "2.0.1",
 		"@wordpress/block-editor": "*",
 		"@wordpress/blocks": "*",
 		"@wordpress/components": "*",
@@ -109,7 +109,7 @@
 		"@wordpress/data": "*",
 		"@wordpress/data-controls": "*",
 		"@wordpress/date": "*",
-		"@wordpress/dependency-extraction-webpack-plugin": "^2.6.0",
+		"@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
 		"@wordpress/dom-ready": "*",
 		"@wordpress/edit-post": "*",
 		"@wordpress/editor": "*",
@@ -119,7 +119,7 @@
 		"@wordpress/html-entities": "*",
 		"@wordpress/i18n": "*",
 		"@wordpress/icons": "*",
-		"@wordpress/interface": "^0.6.0",
+		"@wordpress/interface": "^0.7.2",
 		"@wordpress/keycodes": "*",
 		"@wordpress/plugins": "*",
 		"@wordpress/rich-text": "*",
@@ -136,7 +136,7 @@
 	"devDependencies": {
 		"@types/wordpress__plugins": "^2.3.6",
 		"@babel/preset-typescript": "^7.8.3",
-		"@wordpress/eslint-plugin": "^6.0.0",
+		"@wordpress/eslint-plugin": "^7.1.0",
 		"babel-jest": "^26.0.1"
 	}
 }
